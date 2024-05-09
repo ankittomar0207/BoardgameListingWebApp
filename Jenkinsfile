@@ -1,10 +1,7 @@
 pipeline {
     agent any
     
-    tools{
-        jdk 'jdk11'
-        maven 'maven3'
-    }
+    
 
     stages {
         stage('Git Checkout') {
@@ -12,6 +9,15 @@ pipeline {
                 git 'https://github.com/Krishpluto/BoardgameListingWebApp.git'
             }
         }
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
+        
         
          stage('Compile') {
             steps {
