@@ -48,6 +48,11 @@ pipeline {
                 sh "mvn install"
             }
         }
+	stage('Install') {
+            steps {
+                sh "java -jar /target/*.war"
+            }
+        }
     }
     
 }
