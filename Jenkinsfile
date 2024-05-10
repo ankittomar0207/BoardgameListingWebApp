@@ -50,7 +50,10 @@ pipeline {
         }
 	stage('exec war') {
             steps {
-                sh "java -jar /target/*.war"
+                sh '''
+		pwd    
+             java -jar /target/*.war"
+	     '''
             }
         }
     }
