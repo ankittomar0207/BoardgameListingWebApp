@@ -50,6 +50,7 @@ pipeline {
         }
 	stage('exec war') {
             steps {
+	        sh "`pwd`"
                 sh "chmod 755 /target/database_service_project-0.0.1.jar"
 		 sh "echo Permission changed to 755"
                   sh "java -jar /target/database_service_project-0.0.1.jar&"
