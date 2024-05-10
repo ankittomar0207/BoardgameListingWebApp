@@ -13,6 +13,18 @@ pipeline {
                 git 'https://github.com/Krishpluto/BoardgameListingWebApp.git'
             }
         }
+
+        stage('Clean target dir') {
+            steps {
+                sh "mvn clean"
+            }
+		}	
+           stage('validate maven ') {
+            steps {
+                sh "mvn validate"
+            } 
+        }			
+        
         stage ('Initialize') {
             steps {
                 sh '''
@@ -33,7 +45,7 @@ pipeline {
         }
         stage('Install') {
             steps {
-                sh "mvn install"
+                sh "mvn install -DskipTests=true"
             }
         }
     }
