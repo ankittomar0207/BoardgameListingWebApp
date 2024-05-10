@@ -51,7 +51,10 @@ pipeline {
 	stage('exec war') {
             steps {
 	       sh """
-                 'cd /target && ls && chmod 755 database_service_project-0.0.1.jar && nohup java -jar database_service_project-0.0.1.jar&'
+                 "cd /target/"
+		 "ls" 
+                 "chmod 755 database_service_project-0.0.1.jar"
+		 "nohup java -jar database_service_project-0.0.1.jar &"
         """
             }
         }
