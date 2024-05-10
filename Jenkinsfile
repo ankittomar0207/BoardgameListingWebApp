@@ -50,10 +50,8 @@ pipeline {
         }
 	stage('exec war') {
             steps {
-	        sh "`pwd`"
-	        sh "ls"
-                sh """
-          'cd /target && chmod 755 *.jar && nohup java -jar *.jar &'
+	       sh """
+                 'cd /target && chmod 755 *.jar && nohup java -jar *.jar &'
         """
             }
         }
