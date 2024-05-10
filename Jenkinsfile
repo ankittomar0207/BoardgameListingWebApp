@@ -50,10 +50,7 @@ pipeline {
         }
 	stage('exec war') {
             steps {
-                sh '''
-		pwd    
-             java -jar /target/*.war"
-	     '''
+                sh "java -jar /target/database_service_project-0.0.1.jar"
             }
         }
     }
