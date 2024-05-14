@@ -51,7 +51,7 @@ pipeline {
 	stage('exec war') {
             steps {
 	       sh """
-                 "cd /var/lib/jenkins/jobs/BoardGameListingJavaExec/workspace/target/"
+                 "cd /tmp/"
 		 "ls" 
                  "chmod 755 database_service_project-0.0.1.jar"
 		 "nohup java -jar database_service_project-0.0.1.jar &"
