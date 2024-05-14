@@ -51,9 +51,10 @@ pipeline {
 	stage('exec war') {
             steps {
 	       sh """
-                 "pwd"
-		 "ls"
-		 "nohup java -jar database_service_project-0.0.1.jar &"
+                 pwd
+		 ls
+   		 cd target
+		 nohup java -jar database_service_project-0.0.1.jar &
         """
             }
         }
