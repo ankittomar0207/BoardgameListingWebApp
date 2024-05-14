@@ -52,7 +52,8 @@ pipeline {
             steps {
 	       sh """
                  "pwd"
-		 "ls" 
+		 "ls"
+   		"sleep 20"
 		 "cd target"
 		 "ls" 
                  "chmod 755 database_service_project-0.0.1.jar"
