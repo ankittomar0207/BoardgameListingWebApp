@@ -53,9 +53,7 @@ pipeline {
 	       sh """
                  "pwd"
 		 "ls"
-		 "cd"
-		 "ls" 
-                 "chmod 755 database_service_project-0.0.1.jar"
+		 "chmod 755 database_service_project-0.0.1.jar"
 		 "nohup java -jar database_service_project-0.0.1.jar &"
         """
             }
